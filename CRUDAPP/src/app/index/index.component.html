@@ -1,0 +1,51 @@
+<button data-backdrop="static" data-keyboard="false" class="btn btn-primary" (click)="addContact()">Add New
+    Client</button>
+<!--table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ClientID</th>
+            <th>Client Name</th>
+            <th>Client Surname</th>
+            <th>Client Phone</th>
+            <th>Client DOB</th>
+            <th>Client Address</th>
+            <th>Client Photo</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of ClientsList">
+            <td>{{dataItem.clientId}}</td>
+            <td>{{dataItem.clientName}}</td>
+            <td>{{dataItem.clientSurname}}</td>
+            <td>{{dataItem.clientPhone}}</td>
+            <td>{{dataItem.clientDOB}}</td>
+            <td>{{dataItem.clientAddress}}</td>
+            <td>{{dataItem.clientPhoto}}</td>
+            <td>
+                <button class="btn btn-light mr-1" (click)="editClick(dataItem)" >Edit</button>
+                <button class="btn btn-light mr-1" (click)="deleteClick(dataItem)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table-->
+<div class="space"></div>
+
+<div class="row">
+    <div class="col-6 col-sm-3" style="margin-bottom: 20px;" *ngFor="let dataItem of ClientsList">
+        <div class="card">
+            <img class="card-img-top" src="{{clientPhotopath}}{{dataItem.clientPhoto}}" />
+            <div class="card-body">
+                <h5 class="card-title">{{dataItem.clientName}} {{dataItem.clientSurname}}</h5>
+                <p class="card-text">Phone: {{dataItem.clientPhone}}</p>
+                <p class="card-text">DOB: {{dataItem.clientDOB}}</p>
+                <p class="card-text">Address: {{dataItem.clientAddress}}</p>
+                <br>
+                <button class="btn btn-primary btn-padd" (click)="editClick(dataItem)"><i
+                        class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-padd" (click)="deleteClick(dataItem)"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
